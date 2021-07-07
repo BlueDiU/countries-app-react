@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import CountryList from './CountryList/CountryList';
 
 import Header from './header/Header';
 import Section from './section/Section';
@@ -15,6 +16,8 @@ function Main() {
       <Header />
       <MainContainer>
         <Section />
+
+        <CountryList />
       </MainContainer>
     </div>
   );
