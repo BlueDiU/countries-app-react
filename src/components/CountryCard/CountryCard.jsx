@@ -1,6 +1,6 @@
-import { CountryCardStyled } from './CountryScreen.styles';
+import { CountryCardStyled } from './CountryCard.styles';
 
-function CountryScreen() {
+function CountryCard({}) {
   return (
     <CountryCardStyled>
       <article className="country-card">
@@ -36,4 +36,4 @@ function CountryScreen() {
   );
 }
 
-export default CountryScreen;
+export default CountryCard;

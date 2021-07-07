@@ -1,6 +1,9 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import CountryScreen from '../CountryCard/CountryScreen';
+import { startGetAllCountries } from '../../context/actions/country';
+import CountryScreen from '../CountryCard/CountryCard';
 
 const CountryListStyled = styled.div`
   display: flex;
@@ -20,6 +23,15 @@ const CountryListStyled = styled.div`
 `;
 
 function CountryList() {
+  const dispatch = useDispatch();
+  const { countries } = useSelector(
+    (state) => state.countriesData
+  );
+
+  useEffect(() => {
+    dispatch(startGetAllCountries());
+  }, [dispatch]);
+
   return (
     <CountryListStyled>
       <CountryScreen />
