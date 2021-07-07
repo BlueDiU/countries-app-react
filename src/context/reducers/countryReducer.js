@@ -1,10 +1,10 @@
 import { types } from '../types';
 
 const initialState = {
-  countries: [],
-  details: [],
-  region: [],
-  country: [],
+  countries: null,
+  details: null,
+  region: null,
+  country: null,
 };
 
 export const countryReducer = (state = initialState, action) => {
@@ -12,7 +12,13 @@ export const countryReducer = (state = initialState, action) => {
     case types.countryGetAllCountries:
       return {
         ...state,
-        countries: [...state.countries, action.payload],
+        countries: action.payload,
+      };
+
+    case types.countryGetCountryByName:
+      return {
+        ...state,
+        details: action.payload,
       };
 
     default:

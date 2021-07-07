@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { startGetAllCountries } from '../../context/actions/country';
-import CountryScreen from '../CountryCard/CountryCard';
+import CountryCard from '../CountryCard/CountryCard';
+import Loader from '../utils/Loader';
 
 const CountryListStyled = styled.div`
   display: flex;
@@ -32,9 +33,15 @@ function CountryList() {
     dispatch(startGetAllCountries());
   }, [dispatch]);
 
+  if (!countries) {
+    return <Loader />;
+  }
+
   return (
     <CountryListStyled>
-      <CountryScreen />
+      {countries?.map((country) => (
+        <CountryCard key={country.name} {...country} />
+      ))}
     </CountryListStyled>
   );
 }

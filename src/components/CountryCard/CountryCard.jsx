@@ -1,33 +1,53 @@
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { startGetCountryByName } from '../../context/actions/country';
 import { CountryCardStyled } from './CountryCard.styles';
 
-function CountryCard({}) {
+function CountryCard({
+  name,
+  capital,
+  population,
+  flag,
+  region,
+}) {
+  const dispatch = useDispatch();
+  let history = useHistory();
+
+  const handleViewDetails = () => {
+    history.push(`/details/${name}`);
+
+    dispatch(startGetCountryByName(name));
+  };
+
   return (
     <CountryCardStyled>
       <article className="country-card">
         <img
+          loading="lazy"
           className="country-card__img"
-          src="https://restcountries.eu/data/slv.svg"
-          alt=""
+          src={flag}
+          alt={name}
+          onClick={handleViewDetails}
         />
 
         <div className="country-card__container">
-          <h2 className="country-card__title">El Salvador</h2>
+          <h2 className="country-card__title">{name}</h2>
           <section className="country-info">
             <div className="country-info__text">
               <span className="country-info__bold">
                 Population:
               </span>
-              100,000,000
+              {population}
             </div>
             <div className="country-info__text">
-              <span className="country-info__bold">Region:</span>{' '}
-              Americas
+              <span className="country-info__bold">Region:</span>
+              {region}
             </div>
             <div className="country-info__text">
               <span className="country-info__bold">
                 Capital:
               </span>
-              San Salvador
+              {capital}
             </div>
           </section>
         </div>
