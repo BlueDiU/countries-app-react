@@ -50,6 +50,7 @@ const countryGetByName = (data) => ({
   payload: data,
 });
 
+//action for clean data when the user leaves the details route
 export const startCleanDetails = () => ({
   type: types.countryCleanDetails,
 });

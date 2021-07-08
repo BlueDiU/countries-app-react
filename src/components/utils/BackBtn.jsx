@@ -1,5 +1,7 @@
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { startCleanDetails } from '../../context/actions/country';
 
 const BackBtnStyled = styled.div`
   .back-btn {
@@ -28,11 +30,21 @@ const BackBtnStyled = styled.div`
 
 function BackBtn() {
   let history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleCleanData = () => {
+    dispatch(startCleanDetails());
+  };
+
   return (
     <BackBtnStyled>
       <span
         className="back-btn"
-        onClick={() => history.push('/')}
+        onClick={() => {
+          history.push('/');
+
+          handleCleanData();
+        }}
       >
         &larr; Back
       </span>
