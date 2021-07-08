@@ -4,7 +4,7 @@ import CountryList from './CountryList/CountryList';
 import Header from './header/Header';
 import Section from './section/Section';
 
-const MainContainer = styled.main`
+export const MainContainer = styled.main`
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-width);

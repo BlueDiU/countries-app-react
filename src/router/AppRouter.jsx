@@ -1,27 +1,26 @@
-import { Switch, Route, HashRouter } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  HashRouter,
+  Redirect,
+} from 'react-router-dom';
+import CountryDetails from '../components/CountryDetails/CountryDetails';
 import Main from '../components/Main';
 
 function AppRouter() {
   return (
     <div>
-      <HashRouter basename="country">
+      <HashRouter>
         <div>
           <Switch>
             <Route exact path="/" component={Main} />
-
             <Route
               exact
-              path={`details/:id`}
-              children={
-                <h1 style={{ color: 'white' }}>
-                  Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Esse, excepturi rem rerum
-                  eaque blanditiis maxime sed eum dolore, odit
-                  dignissimos delectus quos vitae et atque,
-                  consequatur veniam temporibus illum dolorem.
-                </h1>
-              }
+              path={`/details/:name`}
+              component={CountryDetails}
             />
+
+            <Redirect to="/" />
           </Switch>
         </div>
       </HashRouter>

@@ -1,6 +1,4 @@
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { startGetCountryByName } from '../../context/actions/country';
 import { CountryCardStyled } from './CountryCard.styles';
 
 function CountryCard({
@@ -10,13 +8,10 @@ function CountryCard({
   flag,
   region,
 }) {
-  const dispatch = useDispatch();
   let history = useHistory();
 
   const handleViewDetails = () => {
     history.push(`/details/${name}`);
-
-    dispatch(startGetCountryByName(name));
   };
 
   return (

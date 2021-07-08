@@ -11,9 +11,13 @@ const {
 // action for get data for API
 export const startGetAllCountries = () => {
   return async (dispatch) => {
-    const res = await helpHttp().get(GET_ALL_COUNTRIES);
+    try {
+      const res = await helpHttp().get(GET_ALL_COUNTRIES);
 
-    dispatch(countryGetAll(res));
+      dispatch(countryGetAll(res));
+    } catch (error) {
+      console.error(error);
+    }
   };
 };
 
@@ -27,15 +31,19 @@ const countryGetAll = (data) => ({
 // action for get data for API when the name is provided
 export const startGetCountryByName = (name) => {
   return async (dispatch) => {
-    const res = await helpHttp().get(
-      `${GET_COUNTRY_BY_NAME}${name}`
-    );
+    try {
+      const res = await helpHttp().get(
+        `${GET_COUNTRY_BY_NAME}${name}`
+      );
 
-    dispatch(countryGetByName(res));
+      dispatch(countryGetByName(res));
+    } catch (error) {
+      console.error(error);
+    }
   };
 };
 
-// action "startGetAllCountries" for put data of api in the reducer and
+// action "startGetCountryByName" for put data of api in the reducer and
 // put at the store
 const countryGetByName = (data) => ({
   type: types.countryGetCountryByName,
