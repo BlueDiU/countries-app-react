@@ -21,6 +21,12 @@ export const countryReducer = (state = initialState, action) => {
         details: action.payload,
       };
 
+    case types.countryCleanDetails:
+      return {
+        ...state,
+        details: null,
+      };
+
     default:
       return state;
   }

@@ -49,3 +49,7 @@ const countryGetByName = (data) => ({
   type: types.countryGetCountryByName,
   payload: data,
 });
+
+export const startCleanDetails = () => ({
+  type: types.countryCleanDetails,
+});
