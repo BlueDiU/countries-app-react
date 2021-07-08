@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { startGetCountryByName } from '../../context/actions/country';
 import { MainContainer } from '../Main';
 import BackBtn from '../utils/BackBtn';
+import Loader from '../utils/Loader';
 import { CountryDetailsStyled } from './CountryDetails.styles';
 import DetailsImg from './detailsImg/DetailsImg';
 import DetailsInfo from './DetailsInfo';
@@ -26,7 +27,7 @@ function CountryDetails() {
   }, [pathname, dispatch]);
 
   if (!details) {
-    return <h2>Loading...</h2>;
+    return <Loader />;
   }
 
   const {
