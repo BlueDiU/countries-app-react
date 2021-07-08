@@ -18,7 +18,6 @@ function CountryCard({
     <CountryCardStyled>
       <article className="country-card">
         <img
-          loading="lazy"
           className="country-card__img"
           src={flag}
           alt={name}

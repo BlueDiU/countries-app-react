@@ -5,6 +5,11 @@ import { startGetCountryByName } from '../../context/actions/country';
 import { MainContainer } from '../Main';
 import BackBtn from '../utils/BackBtn';
 import { CountryDetailsStyled } from './CountryDetails.styles';
+import DetailsImg from './detailsImg/DetailsImg';
+import DetailsInfo from './DetailsInfo';
+import DetailsGroupBorders from './groups/DetailsGroupBorders';
+import DetailsGroupOne from './groups/DetailsGroupOne';
+import DetailsGroupTwo from './groups/DetailsGroupTwo';
 
 function CountryDetails() {
   const dispatch = useDispatch();
@@ -33,6 +38,9 @@ function CountryDetails() {
     region,
     subregion,
     capital,
+    topLevelDomain,
+    currencies,
+    languages,
   } = details[0];
 
   return (
@@ -41,86 +49,29 @@ function CountryDetails() {
         <BackBtn />
 
         <article className="details-card">
-          <img
-            className="details-card__img"
-            src={flag}
-            alt={name}
-          />
+          <DetailsImg flag={flag} name={name} />
 
-          <section className="details-info">
+          <DetailsInfo>
             <h3 className="details-info__name">{name}</h3>
-            <div className="details-info__group-1">
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Native Name:
-                </span>
-                {nativeName}
-              </p>
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Population:
-                </span>
-                {population}
-              </p>
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Region:
-                </span>
-                {region}
-              </p>
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Sub Region:
-                </span>
-                {subregion}
-              </p>
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Capital:
-                </span>
-                {capital}
-              </p>
+
+            <div className="details-info__groups">
+              <DetailsGroupOne
+                nativeName={nativeName}
+                population={population}
+                region={region}
+                subregion={subregion}
+                capital={capital}
+              />
+
+              <DetailsGroupTwo
+                topLevelDomain={topLevelDomain}
+                currencies={currencies}
+                languages={languages}
+              />
             </div>
 
-            <div className="details-info__group-2">
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Top Level Domain:
-                </span>
-              </p>
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Currencies:
-                </span>
-              </p>
-              <p className="details-info__text">
-                <span className="details-info__bold">
-                  Languages:
-                </span>
-              </p>
-            </div>
-
-            <div className="details-info__group-3">
-              <h5 className="group-3__title">
-                Border Countries:
-              </h5>
-              <div className="group-3__container">
-                <div className="group-3__box">
-                  {borders?.length > 0 ? borders[0] : '❌'}
-                </div>
-                <div className="group-3__box">
-                  {borders?.length > 0 ? borders[1] : '❌'}
-                </div>
-                <div className="group-3__box">
-                  {borders?.length > 0
-                    ? borders[2]
-                      ? borders[2]
-                      : '❌'
-                    : '❌'}
-                </div>
-              </div>
-            </div>
-          </section>
+            <DetailsGroupBorders borders={borders} />
+          </DetailsInfo>
         </article>
       </CountryDetailsStyled>
     </MainContainer>
