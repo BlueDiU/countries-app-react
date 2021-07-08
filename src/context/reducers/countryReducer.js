@@ -3,8 +3,6 @@ import { types } from '../types';
 const initialState = {
   countries: null,
   details: null,
-  region: null,
-  country: null,
 };
 
 export const countryReducer = (state = initialState, action) => {
@@ -15,7 +13,7 @@ export const countryReducer = (state = initialState, action) => {
         countries: action.payload,
       };
 
-    case types.countryGetCountryByName:
+    case types.countryGetCountryByCode:
       return {
         ...state,
         details: action.payload,

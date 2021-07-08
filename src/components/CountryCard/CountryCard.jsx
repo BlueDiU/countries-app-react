@@ -9,11 +9,12 @@ function CountryCard({
   population,
   flag,
   region,
+  callingCodes,
 }) {
   let history = useHistory();
 
   const handleViewDetails = () => {
-    history.push(`/details/${name}`);
+    history.push(`/details/${callingCodes[0]}`);
   };
 
   return (

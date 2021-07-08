@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { startGetCountryByName } from '../../context/actions/country';
+import {
+  startGetCountryByCode,
+  startGetCountryByName,
+} from '../../context/actions/country';
 import { MainContainer } from '../Main';
 import BackBtn from '../utils/BackBtn';
 import Loader from '../utils/Loader';
@@ -21,9 +24,9 @@ function CountryDetails() {
   let { pathname } = useLocation();
 
   useEffect(() => {
-    const name = pathname.slice(9);
+    const code = pathname.slice(9);
 
-    dispatch(startGetCountryByName(name));
+    dispatch(startGetCountryByCode(code.toString()));
   }, [pathname, dispatch]);
 
   if (!details) {

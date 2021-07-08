@@ -4,8 +4,12 @@ const GET_COUNTRY_BY_NAME =
 const GET_COUNTRIES_BY_REGION =
   'https://restcountries.eu/rest/v2/region/';
 
+const GET_COUNTRY_BY_CODE =
+  'https://restcountries.eu/rest/v2/callingcode/';
+
 export const API_URLS = {
   GET_ALL_COUNTRIES,
   GET_COUNTRY_BY_NAME,
   GET_COUNTRIES_BY_REGION,
+  GET_COUNTRY_BY_CODE,
 };
