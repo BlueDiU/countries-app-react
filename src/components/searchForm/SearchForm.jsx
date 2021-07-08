@@ -1,15 +1,30 @@
+import { useDispatch } from 'react-redux';
+import { startGetCountryByName } from '../../context/actions/country';
+import useForm from '../../hooks/useForm';
 import { SearchFormStyled } from './SearchForm.styles';
 
 function SearchForm() {
+  const dispatch = useDispatch();
+  const [{ search }, handleInputChange] = useForm({
+    search: '',
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //dispatch(startGetCountryByName(search));
+  };
+
   return (
     <SearchFormStyled>
-      <form className="main-form">
+      <form className="main-form" onSubmit={handleSubmit}>
         <input
           className="main-form__search"
           type="search"
           name="search"
           placeholder="🔍 Search for a country..."
           autoComplete="off"
+          onChange={handleInputChange}
         />
       </form>
     </SearchFormStyled>

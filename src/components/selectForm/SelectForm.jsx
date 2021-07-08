@@ -1,9 +1,19 @@
+import useForm from '../../hooks/useForm';
 import { SelectFormStyled } from './SelectForm.styles';
 
 function SelectForm() {
+  const [selectValues, handleInputChange] = useForm({
+    regions: '',
+  });
+
   return (
     <SelectFormStyled>
-      <select className="main-select" name="regions">
+      <select
+        className="main-select"
+        name="regions"
+        defaultValue=""
+        onChange={handleInputChange}
+      >
         <option className="main-select__option" value="default">
           Filter by Region
         </option>

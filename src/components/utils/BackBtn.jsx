@@ -41,7 +41,7 @@ function BackBtn() {
       <span
         className="back-btn"
         onClick={() => {
-          history.push('/');
+          history.goBack();
 
           handleCleanData();
         }}
