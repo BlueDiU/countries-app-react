@@ -14,7 +14,7 @@ function SearchForm() {
   });
 
   useEffect(() => {
-    !search && dispatch(startGetAllCountries());
+    search === '' && dispatch(startGetAllCountries());
   }, [search, dispatch]);
 
   const handleSubmit = (e) => {
@@ -32,6 +32,7 @@ function SearchForm() {
           name="search"
           placeholder="🔍 Search for a country..."
           autoComplete="off"
+          value={search}
           onChange={handleInputChange}
         />
       </form>

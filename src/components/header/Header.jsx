@@ -1,13 +1,21 @@
+import { useHistory } from 'react-router-dom';
 import imgDark from '../../assets/img/darkMode.svg';
 
 import { HeaderStyled } from './Header.styles';
 
 function Header() {
+  let history = useHistory();
+
   return (
     <>
       <HeaderStyled>
         <header className="main-header">
-          <h1 className="main-header__title">
+          <h1
+            className="main-header__title"
+            onClick={() => {
+              history.goBack();
+            }}
+          >
             Where in the world?
           </h1>
 

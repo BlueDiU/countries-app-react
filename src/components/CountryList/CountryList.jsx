@@ -37,8 +37,12 @@ function CountryList() {
     return <Loader />;
   }
 
-  if (countries?.err) {
-    return <h1>No se puedo encontrar resultados</h1>;
+  if (countries.err) {
+    return (
+      <p style={{ textAlign: 'center', fontSize: '2.5rem' }}>
+        Can not find result 🤕
+      </p>
+    );
   }
 
   return (

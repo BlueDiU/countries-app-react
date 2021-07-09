@@ -1,4 +1,5 @@
 import React from 'react';
+import { populationFormat } from '../../../helpers/populationFormat';
 
 function DetailsGroupOne({
   nativeName,
@@ -15,7 +16,7 @@ function DetailsGroupOne({
       </p>
       <p className="details-info__text">
         <span className="details-info__bold">Population: </span>
-        {population}
+        {populationFormat(population)}
       </p>
       <p className="details-info__text">
         <span className="details-info__bold">Region: </span>
