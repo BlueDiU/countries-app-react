@@ -19,7 +19,7 @@ export const helpHttp = () => {
     // if object options in the property body is null, delete that the "body"
     if (!options.body) delete options.body;
 
-    setTimeout(() => controller.abort(), 3000);
+    setTimeout(() => controller.abort(), 7000);
 
     // Return the promise with the options
     return fetch(endpoint, options)

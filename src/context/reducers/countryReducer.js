@@ -13,6 +13,18 @@ export const countryReducer = (state = initialState, action) => {
         countries: action.payload,
       };
 
+    case types.countryGetCountryByName:
+      return {
+        ...state,
+        countries: action.payload,
+      };
+
+    case types.countryGetCountryByRegion:
+      return {
+        ...state,
+        countries: action.payload,
+      };
+
     case types.countryGetCountryByCode:
       return {
         ...state,

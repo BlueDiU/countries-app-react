@@ -1,17 +1,32 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  startGetAllCountries,
+  startGetCountryByRegion,
+} from '../../context/actions/country';
 import useForm from '../../hooks/useForm';
 import { SelectFormStyled } from './SelectForm.styles';
 
 function SelectForm() {
-  const [selectValues, handleInputChange] = useForm({
+  const [{ regions }, handleInputChange] = useForm({
     regions: '',
   });
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (regions === 'default') {
+      return dispatch(startGetAllCountries());
+    } else {
+      return dispatch(startGetCountryByRegion(regions));
+    }
+  }, [regions, dispatch]);
 
   return (
     <SelectFormStyled>
       <select
         className="main-select"
         name="regions"
-        defaultValue=""
         onChange={handleInputChange}
       >
         <option className="main-select__option" value="default">

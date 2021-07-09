@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { startGetCountryByName } from '../../context/actions/country';
+import {
+  startGetAllCountries,
+  startGetCountryByName,
+} from '../../context/actions/country';
 import useForm from '../../hooks/useForm';
 import { SearchFormStyled } from './SearchForm.styles';
 
@@ -9,10 +13,14 @@ function SearchForm() {
     search: '',
   });
 
+  useEffect(() => {
+    !search && dispatch(startGetAllCountries());
+  }, [search, dispatch]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    //dispatch(startGetCountryByName(search));
+    dispatch(startGetCountryByName(search));
   };
 
   return (

@@ -37,6 +37,10 @@ function CountryList() {
     return <Loader />;
   }
 
+  if (countries?.err) {
+    return <h1>No se puedo encontrar resultados</h1>;
+  }
+
   return (
     <CountryListStyled>
       {countries?.map((country) => (

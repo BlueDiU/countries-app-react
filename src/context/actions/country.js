@@ -37,6 +37,7 @@ export const startGetCountryByName = (name) => {
         `${GET_COUNTRY_BY_NAME}${name}`
       );
 
+      console.log(res);
       dispatch(countryGetByName(res));
     } catch (error) {
       console.error(error);
@@ -70,6 +71,27 @@ export const startGetCountryByCode = (code) => {
 // put at the store
 const countryGetByCode = (data) => ({
   type: types.countryGetCountryByCode,
+  payload: data,
+});
+
+export const startGetCountryByRegion = (region) => {
+  return async (dispatch) => {
+    try {
+      const res = await helpHttp().get(
+        `${GET_COUNTRIES_BY_REGION}${region}`
+      );
+
+      dispatch(countryGetByRegion(res));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};
+
+// action "startGetCountryByRegion" for put data of api in the reducer and
+// put at the store
+const countryGetByRegion = (data) => ({
+  type: types.countryGetCountryByRegion,
   payload: data,
 });
 
