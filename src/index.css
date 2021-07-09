@@ -1,4 +1,4 @@
-html {
+/* html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -14,6 +14,7 @@ html {
   --darkGray: hsl(0, 0%, 52%);
   --veryDarkGray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
+
   --font: 'Nunito Sans', sans-serif;
   --max-width: 1200px;
   --shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
@@ -29,7 +30,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
-}
+} */
 
 /* ScrollBar */
 /* width */
