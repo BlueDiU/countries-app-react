@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import CountryList from './CountryList/CountryList';
 
+/* components */
 import Header from './header/Header';
 import Section from './section/Section';
 

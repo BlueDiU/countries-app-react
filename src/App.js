@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 const LightTheme = {
   mainColor: ' hsl(0, 0%, 100%)',
+  cardColor: ' hsl(0, 0%, 100%)',
   fontColor: 'hsl(207, 26%, 17%)',
 };
 
@@ -22,12 +23,12 @@ const themes = {
 };
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('dark'); // light
 
   return (
     <Provider store={store}>
-      <GlobalStyle />
       <ThemeProvider theme={themes[theme]}>
+        <GlobalStyle />
         <AppRouter theme={theme} setTheme={setTheme} />
       </ThemeProvider>
     </Provider>

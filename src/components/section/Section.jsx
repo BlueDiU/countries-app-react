@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+/* components */
 import SearchForm from '../searchForm/SearchForm';
 import SelectForm from '../selectForm/SelectForm';
 

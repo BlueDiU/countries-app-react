@@ -72,7 +72,7 @@ export const CountryDetailsStyled = styled.div`
       }
 
       .border__box {
-        background-color: var(--darkBlue);
+        background-color: ${(props) => props.theme.cardColor};
         border-radius: 3px;
         font-size: 1.2rem;
         box-shadow: var(--shadow);

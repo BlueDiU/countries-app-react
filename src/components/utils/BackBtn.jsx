@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import { startCleanDetails } from '../../context/actions/country';
 
 const BackBtnStyled = styled.div`
@@ -13,8 +13,8 @@ const BackBtnStyled = styled.div`
     font-weight: bold;
     text-decoration: none;
     text-align: left;
-    color: var(--white);
-    background-color: var(--darkBlue);
+    color: ${(props) => props.theme.fontColor};
+    background-color: ${(props) => props.theme.cardColor};
     margin-bottom: 5rem;
     margin-top: 2.4rem;
     margin-left: 2.4rem;

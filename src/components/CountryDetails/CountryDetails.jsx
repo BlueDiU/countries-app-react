@@ -1,14 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import {
-  startGetCountryByCode,
-  startGetCountryByName,
-} from '../../context/actions/country';
+import { startGetCountryByCode } from '../../context/actions/country';
+
+/* components */
 import { MainContainer } from '../Main';
-import BackBtn from '../utils/BackBtn';
-import Loader from '../utils/Loader';
 import { CountryDetailsStyled } from './CountryDetails.styles';
+import Loader from '../utils/Loader';
+import BackBtn from '../utils/BackBtn';
 import DetailsImg from './detailsImg/DetailsImg';
 import DetailsInfo from './DetailsInfo';
 import DetailsGroupBorders from './groups/DetailsGroupBorders';

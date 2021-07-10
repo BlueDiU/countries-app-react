@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const CountryCardStyled = styled.div`
   .country-card {
-    background-color: var(--darkBlue);
-    color: var(--white);
+    background-color: ${(props) => props.theme.cardColor};
+    color: ${(props) => props.theme.fontColor};
     margin-right: 4rem;
     margin-left: 4rem;
     margin-bottom: 4rem;

@@ -13,11 +13,12 @@ export const HeaderStyled = styled.div`
       margin-bottom: 2.7rem;
       padding: 0.4rem 4rem;
     }
-    background-color: var(--darkBlue);
+
+    background-color: ${(props) => props.theme.cardColor};
 
     &__title {
       cursor: pointer;
-      color: var(--white);
+      color: ${(props) => props.theme.fontColor};
       letter-spacing: 1px;
       font-size: 1.8rem;
 
@@ -44,7 +45,7 @@ export const HeaderStyled = styled.div`
       }
       &__text {
         font-size: 1.3rem;
-        color: var(--white);
+        color: ${(props) => props.theme.fontColor};
         font-weight: 600;
       }
     }

@@ -4,8 +4,10 @@ import {
   HashRouter,
   Redirect,
 } from 'react-router-dom';
-import CountryDetails from '../components/CountryDetails/CountryDetails';
+
+/* components */
 import Main from '../components/Main';
+import CountryDetails from '../components/CountryDetails/CountryDetails';
 
 function AppRouter({ theme, setTheme }) {
   return (

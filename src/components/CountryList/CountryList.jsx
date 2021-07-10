@@ -1,10 +1,11 @@
-import React from 'react';
+import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components';
 import { startGetAllCountries } from '../../context/actions/country';
-import CountryCard from '../CountryCard/CountryCard';
+
+/* components */
 import Loader from '../utils/Loader';
+import CountryCard from '../CountryCard/CountryCard';
 
 const CountryListStyled = styled.div`
   display: flex;

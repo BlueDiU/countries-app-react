@@ -1,10 +1,9 @@
+import useForm from '../../hooks/useForm';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  startGetAllCountries,
-  startGetCountryByRegion,
-} from '../../context/actions/country';
-import useForm from '../../hooks/useForm';
+import { startGetCountryByRegion } from '../../context/actions/country';
+
+/* components */
 import { SelectFormStyled } from './SelectForm.styles';
 
 function SelectForm() {

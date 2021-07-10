@@ -5,12 +5,12 @@ export const SearchFormStyled = styled.div`
     width: 100%;
 
     &__search {
-      background-color: var(--darkBlue);
+      background-color: ${(props) => props.theme.cardColor};
       padding: 2.4rem 2.5rem;
       box-shadow: var(--shadow);
       font-size: 1.5rem;
-      color: var(--white);
-      caret-color: var(--white);
+      color: ${(props) => props.theme.fontColor};
+      caret-color: ${(props) => props.theme.fontColor};
       font-weight: 200;
       height: 40px;
       width: 100%;
@@ -25,7 +25,7 @@ export const SearchFormStyled = styled.div`
     }
 
     &__search::placeholder {
-      color: var(--white);
+      color: ${(props) => props.theme.fontColor};
       font-size: 1.5rem;
     }
 

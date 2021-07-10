@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
-import CardImg from './cardImg/CardImg';
+
+/* components */
 import CardInfo from './cardInfor/CardInfo';
+import CardImg from './cardImg/CardImg';
 import { CountryCardStyled } from './CountryCard.styles';
 
 function CountryCard({

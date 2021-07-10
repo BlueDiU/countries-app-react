@@ -29,8 +29,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     overflow-x: hidden;
     font-family: var(--font);
-    background-color: var(--veryDarkBlue);
-    color: var(--white);
+    background-color:  ${(props) => props.theme.mainColor};
+    color: ${(props) => props.theme.fontColor};
   }
 
   img {

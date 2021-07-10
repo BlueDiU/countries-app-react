@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+
+import useForm from '../../hooks/useForm';
 import {
   startGetAllCountries,
   startGetCountryByName,
 } from '../../context/actions/country';
-import useForm from '../../hooks/useForm';
+
 import { SearchFormStyled } from './SearchForm.styles';
 
 function SearchForm() {

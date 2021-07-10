@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const SelectFormStyled = styled.div`
   .main-select {
     cursor: pointer;
-    background-color: var(--darkBlue);
+    background-color: ${(props) => props.theme.cardColor};
+    color: ${(props) => props.theme.fontColor};
     border: 0;
     outline: 0;
-    color: var(--white);
     margin-top: 4rem;
     font-size: 1.5rem;
     width: 50%;
