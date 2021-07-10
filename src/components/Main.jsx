@@ -10,10 +10,10 @@ export const MainContainer = styled.main`
   max-width: var(--max-width);
 `;
 
-function Main() {
+function Main({ theme, setTheme }) {
   return (
     <div>
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
       <MainContainer>
         <Section />
 

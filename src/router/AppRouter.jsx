@@ -7,13 +7,19 @@ import {
 import CountryDetails from '../components/CountryDetails/CountryDetails';
 import Main from '../components/Main';
 
-function AppRouter() {
+function AppRouter({ theme, setTheme }) {
   return (
     <div>
       <HashRouter>
         <div>
           <Switch>
-            <Route exact path="/" component={Main} />
+            <Route
+              exact
+              path="/"
+              children={
+                <Main theme={theme} setTheme={setTheme} />
+              }
+            />
             <Route
               exact
               path={`/details/:name`}

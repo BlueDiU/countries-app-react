@@ -74,6 +74,8 @@ const countryGetByCode = (data) => ({
   payload: data,
 });
 
+// action to get data as the region is provided and if region if undefine
+// the action will call to get all data
 export const startGetCountryByRegion = (region) => {
   return async (dispatch) => {
     try {

@@ -3,10 +3,10 @@ import lightModeImg from '../../assets/img/lightMode.svg';
 
 import { HeaderStyled } from './Header.styles';
 
-function Header() {
+function Header({ theme, setTheme }) {
   return (
     <>
-      <HeaderStyled>
+      <HeaderStyled theme={theme} setTheme={setTheme}>
         <header className="main-header">
           <h1 className="main-header__title">
             Where in the world?
