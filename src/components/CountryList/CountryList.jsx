@@ -37,7 +37,7 @@ function CountryList() {
     return <Loader />;
   }
 
-  if (countries.err) {
+  if (countries?.err) {
     return (
       <p style={{ textAlign: 'center', fontSize: '2.5rem' }}>
         Can not find result 🤕

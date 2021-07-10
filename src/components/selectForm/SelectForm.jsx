@@ -15,11 +15,7 @@ function SelectForm() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (regions === 'default') {
-      return dispatch(startGetAllCountries());
-    } else {
-      return dispatch(startGetCountryByRegion(regions));
-    }
+    dispatch(startGetCountryByRegion(regions));
   }, [regions, dispatch]);
 
   return (
@@ -29,7 +25,7 @@ function SelectForm() {
         name="regions"
         onChange={handleInputChange}
       >
-        <option className="main-select__option" value="default">
+        <option className="main-select__option" value="">
           Filter by Region
         </option>
         <option className="main-select__option" value="africa">

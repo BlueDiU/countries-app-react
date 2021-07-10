@@ -77,11 +77,15 @@ const countryGetByCode = (data) => ({
 export const startGetCountryByRegion = (region) => {
   return async (dispatch) => {
     try {
-      const res = await helpHttp().get(
-        `${GET_COUNTRIES_BY_REGION}${region}`
-      );
+      if (!region) {
+        return dispatch(startGetAllCountries());
+      } else {
+        const res = await helpHttp().get(
+          `${GET_COUNTRIES_BY_REGION}${region}`
+        );
 
-      dispatch(countryGetByRegion(res));
+        dispatch(countryGetByRegion(res));
+      }
     } catch (error) {
       console.error(error);
     }

@@ -1,27 +1,20 @@
-import { useHistory } from 'react-router-dom';
-import imgDark from '../../assets/img/darkMode.svg';
+import DarkModeImg from '../../assets/img/darkMode.svg';
+import lightModeImg from '../../assets/img/lightMode.svg';
 
 import { HeaderStyled } from './Header.styles';
 
 function Header() {
-  let history = useHistory();
-
   return (
     <>
       <HeaderStyled>
         <header className="main-header">
-          <h1
-            className="main-header__title"
-            onClick={() => {
-              history.goBack();
-            }}
-          >
+          <h1 className="main-header__title">
             Where in the world?
           </h1>
 
           <button className="main-button">
             <img
-              src={imgDark}
+              src={DarkModeImg}
               alt=""
               className="main-button__img"
             />
