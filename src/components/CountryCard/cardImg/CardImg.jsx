@@ -4,6 +4,7 @@ function CardImg({ flag, name, handleViewDetails }) {
       className="country-card__img"
       src={flag}
       alt={name}
+      loading="lazy"
       onClick={handleViewDetails}
     />
   );

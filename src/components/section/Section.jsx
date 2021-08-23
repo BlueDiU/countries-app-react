@@ -3,6 +3,7 @@ import styled from 'styled-components';
 /* components */
 import SearchForm from '../searchForm/SearchForm';
 import SelectForm from '../selectForm/SelectForm';
+import ScrollTop from '../utils/scrollTop/ScrollTop';
 
 const MainSection = styled.section`
   display: flex;
@@ -26,6 +27,7 @@ const MainSection = styled.section`
 function Section() {
   return (
     <MainSection>
+      <ScrollTop />
       <SearchForm />
 
       <SelectForm />

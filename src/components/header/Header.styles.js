@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const HeaderStyled = styled.div`
   .main-header {
-    width: 100%;
+    align-items: center;
+    box-shadow: var(--shadow);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 1rem 1.2rem;
-    box-shadow: var(--shadow);
+    width: 100%;
 
     @media only screen and (min-width: 1024px) {
       margin-bottom: 2.7rem;
@@ -17,10 +17,10 @@ export const HeaderStyled = styled.div`
     background-color: ${(props) => props.theme.cardColor};
 
     &__title {
-      cursor: pointer;
       color: ${(props) => props.theme.fontColor};
-      letter-spacing: 1px;
+      cursor: pointer;
       font-size: 1.8rem;
+      letter-spacing: 1px;
 
       @media only screen and (min-width: 1024px) {
         font-size: 2.4rem;
@@ -28,24 +28,24 @@ export const HeaderStyled = styled.div`
     }
 
     .main-button {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin: 0;
-      cursor: pointer;
-      padding: 0;
       background-color: transparent;
       border: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
       outline: 0;
+      padding: 0;
       text-align: center;
 
       &__img {
-        width: 20px;
         margin-right: 9px;
+        width: 20px;
       }
       &__text {
-        font-size: 1.3rem;
         color: ${(props) => props.theme.fontColor};
+        font-size: 1.3rem;
         font-weight: 600;
       }
     }

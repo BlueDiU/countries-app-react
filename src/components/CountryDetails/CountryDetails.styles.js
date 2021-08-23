@@ -37,9 +37,9 @@ export const CountryDetailsStyled = styled.div`
       flex-direction: column;
 
       @media only screen and (min-width: 1024px) {
+        column-gap: 7rem;
         display: grid;
         grid-template-columns: repeat(2, 200px);
-        column-gap: 7rem;
       }
     }
 
@@ -47,8 +47,8 @@ export const CountryDetailsStyled = styled.div`
       margin-top: 2rem;
 
       @media only screen and (min-width: 1024px) {
-        display: flex;
         align-items: center;
+        display: flex;
         justify-content: space-evenly;
         margin-left: -2.58rem;
       }
@@ -65,17 +65,17 @@ export const CountryDetailsStyled = styled.div`
       }
 
       .border__container {
+        align-items: center;
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: space-around;
       }
 
       .border__box {
         background-color: ${(props) => props.theme.cardColor};
         border-radius: 3px;
-        font-size: 1.2rem;
         box-shadow: var(--shadow);
+        font-size: 1.2rem;
         padding: 0.8rem 3rem;
         @media only screen and (min-width: 1024px) {
           margin-left: 1.2rem;

@@ -37,4 +37,29 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     height: auto;
   }
+
+  /* ScrollBar */
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 9px;
+    background: rgba(7, 7, 7, 0.4);
+    border: 0;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(131, 137, 138, 0.9);
+  }
+
 `;

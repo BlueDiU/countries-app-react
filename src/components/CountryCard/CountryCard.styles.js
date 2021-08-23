@@ -3,25 +3,25 @@ import styled from 'styled-components';
 export const CountryCardStyled = styled.div`
   .country-card {
     background-color: ${(props) => props.theme.cardColor};
-    color: ${(props) => props.theme.fontColor};
-    margin-right: 4rem;
-    margin-left: 4rem;
-    margin-bottom: 4rem;
     border-radius: 5px;
     box-shadow: var(--shadow);
+    color: ${(props) => props.theme.fontColor};
+    margin-bottom: 4rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
 
     @media only screen and (min-width: 1024px) {
-      margin-right: 0;
-      margin-left: 0;
       margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     &__img {
-      cursor: pointer;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      width: 100%;
+      cursor: pointer;
       height: auto;
+      width: 100%;
     }
 
     &__container {
@@ -29,10 +29,10 @@ export const CountryCardStyled = styled.div`
     }
 
     &__title {
-      margin: 0;
       font-size: 2rem;
       letter-spacing: 0.5px;
       margin-bottom: 1.3rem;
+      margin: 0;
       padding: 0;
     }
   }

@@ -5,25 +5,26 @@ import { startCleanDetails } from '../../context/actions/country';
 
 const BackBtnStyled = styled.div`
   .back-btn {
-    display: block;
-    padding: 1rem 2rem;
-    box-shadow: var(--shadow);
-    width: 30%;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: left;
-    color: ${(props) => props.theme.fontColor};
     background-color: ${(props) => props.theme.cardColor};
-    margin-bottom: 5rem;
-    margin-top: 2.4rem;
-    margin-left: 2.4rem;
+    border: 0;
+    box-shadow: var(--shadow);
+    color: ${(props) => props.theme.fontColor};
     cursor: pointer;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5rem;
+    margin-left: 2.4rem;
+    margin-top: 2.4rem;
+    padding: 1rem 2rem;
+    text-align: left;
+    text-decoration: none;
+    width: 30%;
 
     @media only screen and (min-width: 1024px) {
-      width: 10%;
       margin-bottom: 5rem;
       margin-left: 2.4rem;
+      width: 10%;
     }
   }
 `;
@@ -38,7 +39,7 @@ function BackBtn() {
 
   return (
     <BackBtnStyled>
-      <span
+      <button
         className="back-btn"
         onClick={() => {
           history.goBack();
@@ -46,8 +47,8 @@ function BackBtn() {
           handleCleanData();
         }}
       >
-        &larr; Back
-      </span>
+        &#8634; Back
+      </button>
     </BackBtnStyled>
   );
 }

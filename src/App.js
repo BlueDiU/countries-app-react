@@ -4,6 +4,10 @@ import { store } from './context/store';
 import { GlobalStyle } from './App.styles';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
+import { useEffect } from 'react';
+
+// get selected theme for ls or  put default "dark"
+const lsTheme = localStorage.getItem('theme') || 'dark';
 
 const LightTheme = {
   mainColor: ' hsl(0, 0%, 100%)',
@@ -24,6 +28,10 @@ const themes = {
 
 function App() {
   const [theme, setTheme] = useState('dark'); // light
+
+  useEffect(() => {
+    setTheme(lsTheme);
+  }, []);
 
   return (
     <Provider store={store}>
